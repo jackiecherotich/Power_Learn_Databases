@@ -1,0 +1,14 @@
+# File Read & Write Challenge
+
+# Open and read the original file
+with open("input.txt", "r") as infile:
+    content = infile.read()
+
+# Modify content (example: convert to uppercase)
+modified_content = content.upper()
+
+# Write modified content to a new file
+with open("output.txt", "w") as outfile:
+    outfile.write(modified_content)
+
+print("✅ Modified file has been written to output.txt")
