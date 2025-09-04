@@ -5,16 +5,16 @@ USE  Week2;
 CREATE TABLE payments (
     checkNumber VARCHAR(50) PRIMARY KEY,
     paymentDate DATE NOT NULL,
-    amount DECIMAL(10,2) NOT NULL,
+    amount DECIMAL(10,1) NOT NULL,
     customerNumber INT
 );
 
 -- Inserting data into payments table
 INSERT INTO payments (checkNumber, paymentDate, amount, customerNumber)
 VALUES 
-('CHK001', '2025-09-01', 2500.00, 101),
-('CHK002', '2025-09-02', 1500.50, 102),
-('CHK003', '2025-03-11', 3200.75, 103);
+('CHK001', '2025-09-01', 2500.0, 101),
+('CHK002', '2025-09-02', 1500.0, 102),
+('CHK003', '2025-03-11', 3200.0, 103);
 
 
 -- retrieve the checkNumber, paymentDate, and amount from the payments table.
@@ -96,7 +96,7 @@ CREATE TABLE offices (
 INSERT INTO offices (officeCode, city, phone, addressLine1, addressLine2, state, country, postalCode, territory)
 VALUES
 ('1', 'Nairobi', '+254-700-123456', 'Westlands Ave', NULL, 'Nairobi', 'Kenya', '00100', 'Africa'),
-('2', 'Kampala', '+256-789-654321', 'Makerere Rd', NULL, 'Kampala', 'Uganda', '00200', 'Africa');
+('2', 'Kampala', '+256-789-6549921', 'Makerere Rd', NULL, 'Kampala', 'Uganda', '00200', 'Africa');
 
 
 -- retrieve all the columns and records from the offices table.
@@ -114,23 +114,24 @@ CREATE TABLE products (
     productVendor VARCHAR(50),
     productDescription TEXT,
     quantityInStock INT NOT NULL,
-    buyPrice DECIMAL(10,2) NOT NULL,
+    buyPrice DECIMAL(10,1) NOT NULL,
 );
 
 -- Insert sample data into products tables
 
 INSERT INTO products (productCode, productName, productLine, productScale, productVendor, productDescription, quantityInStock, buyPrice)
 VALUES
-('P001', 'Classic Car Model A', 'Classic Cars', '1:18', 'AutoArt', 'Detailed model of vintage car', 50, 75.00),
-('P002', 'Sports Car Model B', 'Sports Cars', '1:24', 'Maisto', 'High-quality sports car model', 30, 55.00),
-('P003', 'Truck Model C', 'Trucks', '1:12', 'HotWheels', 'Large truck collectible', 20, 100.00),
-('P004', 'Motorbike Model D', 'Motorbikes', '1:18', 'AutoArt', 'Vintage motorbike model', 10, 40.00),
-('P005', 'Race Car Model E', 'Race Cars', '1:24', 'Maisto', 'Fast race car replica', 15, 60.00),
-('P006', 'Luxury Car Model F', 'Luxury Cars', '1:18', 'Bburago', 'Luxury model with fine details', 25, 200.00);
+('P001', 'Classic Car Model A', 'Classic Cars', '1:18', 'AutoArt', 'Detailed model of vintage car', 50, 57.0),
+('P002', 'Sports Car Model B', 'Sports Cars', '1:24', 'Maisto', 'High-quality sports car model', 30, 25.0),
+('P003', 'Truck Model C', 'Trucks', '1:12', 'HotWheels', 'Large truck collectible', 20, 100.0),
+('P004', 'Motorbike Model D', 'Motorbikes', '1:18', 'AutoArt', 'Vintage motorbike model', 10, 40.0),
+('P005', 'Race Car Model E', 'Race Cars', '1:24', 'Maisto', 'Fast race car replica', 15, 80.0),
+('P006', 'Luxury Car Model F', 'Luxury Cars', '1:18', 'Bburago', 'Luxury model with fine details', 25, 100.0);
 
 -- fetch the productName and quantityInStock from the products table.
 SELECT productName, quantityInStock
 FROM products
 ORDER BY buyPrice ASC
 LIMIT 5;
+
 
