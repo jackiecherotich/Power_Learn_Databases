@@ -1,5 +1,5 @@
-
--- CREATE DATABASE Week2;
+-- Creating Week 2 database
+CREATE DATABASE Week2;
 USE  Week2;
 -- Create table called payments
 CREATE TABLE payments (
